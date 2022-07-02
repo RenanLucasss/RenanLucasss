@@ -1,1 +1,31 @@
 
+import random
+
+lista = []
+caracteres_selecionados = []
+
+def stringMaluca (strings,lista,caracteres_selecionados):
+        
+    for i in list(strings):
+        lista.append(i)
+
+    for i in range(len(lista)//2):
+        caracteres_selecionados.append( random.randrange(len(strings)))
+
+    for i in caracteres_selecionados:
+        lista[i]=lista[i].upper()
+        lista[i+1]=lista[i+1].lower()
+    print("".join(lista))
+
+
+
+while True :
+    
+    frase = input("Digite uma frase : ")
+    if frase.isnumeric() == False:
+        stringMaluca(frase,lista,caracteres_selecionados) 
+        break
+
+    else:
+        print("FRASE INVALIDA ! ")
+        print("Por favor,digite novamente ")
